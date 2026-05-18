@@ -1,0 +1,29 @@
+{% set name = "recruitment_task" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake >=3.21
+    - ninja
+  host:
+    - python ==3.11.*
+    - pybind11
+    - pip
+    - setuptools
+  run:
+    - python ==3.11.*
+    - pygame
+
+about:
+  summary: "showcases the implementation of a recruitment task"
